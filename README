@@ -1,4 +1,6 @@
-Each character (letter or numeral) is represented by a unique sequence of dots and dashes. The duration of a dash is three times the duration of a dot. Each dot or dash is followed by a short silence, equal to the dot duration. The letters of a word are separated by a space equal to three dots (one dash), and two words are separated by a space equal to seven dots.
+This is a program which translates user input to morse. This was written by Juuso Karlström, iuuso, in 2013.
+Program is written in C++.
 
-Source: https://en.wikipedia.org/wiki/Morse_code
+Better description will be added later.
 
+github: https://github.com/iuuso/Morse-cpp
