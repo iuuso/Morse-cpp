@@ -2,26 +2,30 @@
  * File Morse.cpp
  * A program written in c++ to translate
  * text into morse-code. 
+ * Written by Juuso Karlström in 2013. All rights reserved.
  */
 
-//----------------------HEADERS----------------------------
+ #include <iostream>			//
+ #include <string>			//
+ #include <locale>			// toupper()
+ #include <cstdlib>			// System
+ #include <sstream>			// stringstream
+ #include <cctype>			//
 
-#include "Settings.h"		// 
-
- using namespace std;
+using namespace std;
 
 //----------------------FUNCTIONS--------------------------
 
- void Menu();				// Startup menu
- void Dictionary();			// Print the morse dictionary
- void Translator();			// Translation function
+void Menu();				// Startup menu
+void Dictionary();			// Print the morse dictionary
+void Translator();			// Translation function
 
 //---------------------VARIABLES---------------------------
 
 int choice = 5;				// Users choice in menu
 int loop_counter=0;			// Loop counter for dictionary printing
 int input_length;			// Lenght of the user input
-int i;						// Loop counter for the translation loop
+int i;					// Loop counter for the translation loop
 
 string input;				// User input, transformed to morse
 string menuinput;			// User input for menu selection
@@ -39,7 +43,7 @@ char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 
  int main()
  {
- 	cout << "\n MORSE-TRANSLATOR" << endl;
+ 	cout << "\n MORSE-TRANSLATOR - under construction" << endl;
 
  	do
  	{
@@ -56,8 +60,8 @@ char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
  			case 1:
 
  					//------------------Translator-----------------------------
-                    cout << "Please insert a string to be translated > ";
-                    getline(cin, input);
+ 					cout << "Please insert a string to be translated > " << flush;
+ 					getline(cin, input);
  					
  					Translator();
 
@@ -66,6 +70,13 @@ char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 			case 2:
 
 					//----------------Introduction-----------------------------
+					
+					/* This does not have any knowledge about the system used,
+					 * so if you choose this i have no idea what would happen.
+					 * Have to build OS-detection or something similar to this.
+					 */
+
+
 					cout << " Introduction to Morse-code" << endl;
 					system ( "gedit README");
 
@@ -80,7 +91,7 @@ char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 
 			case 4:
 
-					// Translations history (Container)
+					cout << " \n Container not done yet, please come back some another time" << endl;
 					break;
 
 			case 0: 
@@ -96,7 +107,7 @@ char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 
  	}while ( choice != 0 );
 
- 	cout << " Exit \n" << endl;
+ 	cout << " \nExit \n" << endl;
  	
  	return 0;
  }
@@ -105,8 +116,8 @@ char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 void Menu()
 {
 	cout << "\n 1) Translate string to Morse" << endl;
-	cout << " 2) Introduction to Morse" << endl;
-	cout << " 3) See definitons for Morse" << endl;
+	cout << " 2) Introduction to Morse (README)" << endl;
+	cout << " 3) \"Morse Dictionary\"" << endl;
 	cout << " 4) See history" << endl;
 	cout << " 0) Exit" << endl;
 	cout << "\nChoice > " ;
@@ -132,9 +143,30 @@ void Translator()
  	input_length=input.size();
  	for (string::size_type i = 0; i < input.length(); i++)
 	{
+		// One example of transforming the string in to something else.
+		// Not very efficient though, because when you implement it like
+		// this it has to go through every letter and transform them.
   		input[i] = toupper (input[i]);
+  		if (input[i] == 'A')
+  		{
+  			input[i] = ' ';
+  		}
 	}
-	cout << input;
-} 
+
+	// Testing translations and output
+	cout << "\n Translated input: " << input << endl;
+	cout << "\nYour inputs length was " << input_length << " characters" << endl;
+
+	if (input.find (' ') != string::npos)
+	{
+   		cout  << "Contains at least one space!" << endl;
+	}
+	else
+	{
+   		cout  << "Does not contain any spaces!" << endl;
+	}
+
+
+}  
  //---------------------------------------------------------
 
