@@ -1,42 +1,4 @@
-A = .-
-B = -...
-C = -.-.
-D = -..
-E = .
-F = ..-.
-G = --.
-H = ....
-I = ..
-J = .---
-K = -.-
-L = .-..
-M = --
-N = -.
-O = ---
-P = .--.
-Q = --.-
-R = .-.
-S = ...
-T = -
-U = ..-
-V = ...-
-W = .--
-X = -..-
-Y = -.--
-Z = --..
-
-# Numerals
-0 = -----
-1 = .----
-2 = ..---
-3 = ...--
-4 = ...-
-5 = .....
-6 = -....
-7 = --...
-8 = ---..
-9 = ----.
+Each character (letter or numeral) is represented by a unique sequence of dots and dashes. The duration of a dash is three times the duration of a dot. Each dot or dash is followed by a short silence, equal to the dot duration. The letters of a word are separated by a space equal to three dots (one dash), and two words are separated by a space equal to seven dots.
 
 Source: https://en.wikipedia.org/wiki/Morse_code
 
-char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
