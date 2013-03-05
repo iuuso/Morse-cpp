@@ -78,7 +78,7 @@ char text[26] [3] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 
 
 					cout << " Introduction to Morse-code" << endl;
-					system ( "gedit README");
+					system ( "gedit manual");
 
 					break;
 
